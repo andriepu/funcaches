@@ -1,17 +1,18 @@
 {
   "name": "funcaches",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple function caching implementation",
   "main": "dist/funcaches.min.js",
   "files": [
-    "dist/funcaches.min.js"
+    "dist/funcaches.min.js",
+    "dist/funcaches.min.js.map"
   ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --progress --colors --watch",
     "build-dev": "cross-env NODE_ENV=development webpack",
     "build": "cross-env NODE_ENV=production webpack",
     "lint": "eslint src/*",
-    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --require babel-core/register --require babel-polyfill --colors ./test/*.test.js --timeout=3000",
+    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --require babel-core/register --colors ./test/*.test.js --timeout=3000",
     "coverage": "cross-env NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
     "prepare": "yarn test && yarn lint && yarn build"
   },
@@ -45,7 +46,7 @@
     "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.5",
     "babel-plugin-istanbul": "^4.1.6",
-    "babel-polyfill": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",

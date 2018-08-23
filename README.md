@@ -10,7 +10,7 @@ $ npm install funcaches
 ```
 **Browser**
 ```
-<script src="https://unpkg.com/funcaches@1.0.0/dist/funcaches.min.js"></script>
+<script src="https://unpkg.com/funcaches@1.0.1/dist/funcaches.min.js"></script>
 ```
 
 ## Usage 
