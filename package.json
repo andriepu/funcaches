@@ -1,0 +1,64 @@
+{
+  "name": "funcaches",
+  "version": "1.0.0",
+  "description": "Simple function caching implementation",
+  "main": "dist/funcaches.min.js",
+  "files": [
+    "dist/funcaches.min.js"
+  ],
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack --progress --colors --watch",
+    "build-dev": "cross-env NODE_ENV=development webpack",
+    "build": "cross-env NODE_ENV=production webpack",
+    "lint": "eslint src/*",
+    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --require babel-core/register --require babel-polyfill --colors ./test/*.test.js --timeout=3000",
+    "coverage": "cross-env NODE_ENV=test nyc report --reporter=text-lcov | coveralls",
+    "prepare": "yarn test && yarn lint && yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andriepu/funcaches.git"
+  },
+  "keywords": [
+    "cache",
+    "wrapper",
+    "async",
+    "memoize",
+    "ttl"
+  ],
+  "author": "andriepu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andriepu/funcaches/issues"
+  },
+  "homepage": "https://github.com/andriepu/funcaches#readme",
+  "nyc": {
+    "require": [
+      "babel-core/register"
+    ],
+    "sourceMap": false,
+    "instrument": false
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-istanbul": "^4.1.6",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-spies": "^1.0.0",
+    "coveralls": "^3.0.2",
+    "cross-env": "^5.2.0",
+    "eslint-config-airbnb-bundle": "^2.0.4",
+    "mocha": "^5.2.0",
+    "nyc": "^12.0.2",
+    "sinon": "^6.1.5",
+    "uglifyjs-webpack-plugin": "^1.3.0",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  },
+  "dependencies": {}
+}
