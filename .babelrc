@@ -3,6 +3,12 @@
   "env": {
     "test": {
       "plugins": [
+        ["transform-runtime", {
+          "helpers": false,
+          "polyfill": false,
+          "regenerator": true,
+          "moduleName": "babel-runtime"
+        }],
         ["istanbul", {
           "exclude": [
             "**/*.test.js"

@@ -15,6 +15,7 @@ const config = {
     library: libraryName,
     libraryTarget: 'umd',
     umdNamedDefine: true,
+    globalObject: 'this',
   },
   module: {
     rules: [{
